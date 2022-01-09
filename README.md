@@ -1,2 +1,2 @@
-# INventory
+# Inventory
 Nothing to comment
