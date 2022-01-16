@@ -3,45 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../static/main.css">
     <title>Inventory</title>
 </head>
 <body>
-    <div class="container">
+    <nav class="topnav">
         <img src="../static/inventivelogo.jpg" alt="Inventive logo" class="logo">
+        <a class="active" href="#home">Home</a> |
+        <a href="">Automatically</a> |
+        <a href="">Exit</a>
+    </nav>
+    <!-- <div class="container"> -->
         {% if message %}
             <p class="message">{{ message | safe }}</p>
         {% endif %}
+    <!-- </div> -->
+    <div class="main-container">
         <form action="/submit" method="POST">
             <div class="form-group">
-                <h3>User Name</h3>
-                <input type="text" name="user" placeholder="User Name"/>
-                <h3>Brand</h3>
-                <input type="text" name="brand" placeholder="Brand"/>
-                <h3>Model</h3>
-                <input type="text" name="model" placeholder="Model"/>
-                <h3>Serial Number</h3>
-                <input type="text" name="serialNumber" placeholder="Serial Number"/>
-                <h3>RAM size</h3>
-                <input type="text" name="ram" placeholder="RAM size"/>
-                <h3>Operating System</h3>
-                <input type="text" name="operatingSystem" placeholder="Operating System"/>
-                <h3>Windows Licence</h3>
-                <input type="text" name="licence" placeholder="Windows Licence"/>
-                <h3>AzureAdJoined :</h3>
-                <input type="text" name="azureAdJoined" placeholder="AzureAdJoined"/>
-                <h3>AzureAdPrt :</h3>
-                <input type="text" name="azureAdPrt" placeholder="AzureAdPrt"/>
-                <h3>IsDeviceJoined :</h3>
-                <input type="text" name="isDeviceJoined" placeholder="IsDeviceJoined"/>
-                <h3>IsUserAzureAD :</h3>
-                <input type="text" name="isUserAzureAD" placeholder="IsUserAzureAD"/>
-                <h3>MAC address :</h3>
-                <input type="text" name="macAddress" placeholder="MAC address"/>
-                <input type="submit" value="Submit" class="btn"/>
-            </div>
+                <div class="mini-container">
+                    <h3>User</h3>
+                    <input type="text" name="user" placeholder="User Name"/>
+
+                    <h3>Brand</h3>
+                    <input type="text" name="brand" placeholder="Brand"/>
+
+                    <h3>Model</h3>
+                    <input type="text" name="model" placeholder="Model"/>
+
+                    <h3>S/N</h3>
+                    <input type="text" name="serialNumber" placeholder="Serial Number"/>
+                </div>
+                <div class="mini-container-2">
+                    <h3>RAM</h3>
+                    <input type="text" name="ram" placeholder="RAM size"/>
+
+                    <h3>OS</h3>
+                    <input type="text" name="operatingSystem" placeholder="Operating System"/>
+
+                    <h3>Licence</h3>
+                    <input type="text" name="licence" placeholder="Windows Licence"/>
+
+                    <h3>MAC:</h3>
+                    <input type="text" name="macAddress" placeholder="MAC address"/>
+
+                </div>
+                <div class="mini-container-3">
+                    <h3>AzureAdPrt:</h3>
+                    <input type="text" name="azureAdPrt" placeholder="AzureAdPrt"/>
+               
+                    <h3>IsDeviceJoined:</h3>
+                    <input type="text" name="isDeviceJoined" placeholder="IsDeviceJoined"/>
+                
+                    <h3>IsUserAzureAD:</h3>
+                    <input type="text" name="isUserAzureAD" placeholder="IsUserAzureAD"/>
+
+                    <h3>AzureAdJoined:</h3>
+                    <input type="text" name="azureAdJoined" placeholder="AzureAdJoined"/>
+                    <input type="submit" value="Submit" class="btn"/>
+                </div>
+            </div>               
         </form>
+
     </div>
 </body>
 </html>
