@@ -9,58 +9,60 @@
 </head>
 <body>
     <nav class="topnav">
-        <img src="../static/inventivelogo.jpg" alt="Inventive logo" class="logo">
-        <a class="active" href="#home">Home</a> |
-        <a href="">Automatically</a> |
+        <a class="active" href="#home">Home</a>
+        <a href="">Automatically</a>
+        <a href="">Login</a>
         <a href="">Exit</a>
     </nav>
+    <div id="separator">
     <!-- <div class="container"> -->
         {% if message %}
             <p class="message">{{ message | safe }}</p>
         {% endif %}
     <!-- </div> -->
+    </div>
     <div class="main-container">
         <form action="/submit" method="POST">
             <div class="form-group">
                 <div class="mini-container">
-                    <h3>User</h3>
-                    <input type="text" name="user" placeholder="User Name"/>
+                    <label for="user">User</label>
+                    <input class="textInput" type="text" name="user" placeholder="User Name"/>
 
-                    <h3>Brand</h3>
-                    <input type="text" name="brand" placeholder="Brand"/>
+                    <label for="brand">Brand</label>
+                    <input class="textInput" type="text" name="brand" placeholder="Brand"/>
 
-                    <h3>Model</h3>
-                    <input type="text" name="model" placeholder="Model"/>
+                    <label for="model">Model</label>
+                    <input class="textInput" type="text" name="model" placeholder="Model"/>
 
-                    <h3>S/N</h3>
-                    <input type="text" name="serialNumber" placeholder="Serial Number"/>
+                    <label for="sn">S/N</label>
+                    <input class="textInput" type="text" name="serialNumber" placeholder="Serial Number"/>
                 </div>
                 <div class="mini-container-2">
-                    <h3>RAM</h3>
-                    <input type="text" name="ram" placeholder="RAM size"/>
+                    <label for="ram">RAM</label>
+                    <input class="textInput" type="text" name="ram" placeholder="RAM size"/>
 
-                    <h3>OS</h3>
-                    <input type="text" name="operatingSystem" placeholder="Operating System"/>
+                    <label for="os">OS</label>
+                    <input class="textInput" type="text" name="operatingSystem" placeholder="Operating System"/>
 
-                    <h3>Licence</h3>
-                    <input type="text" name="licence" placeholder="Windows Licence"/>
+                    <label for="licence">Licence</label>
+                    <input class="textInput" type="text" name="licence" placeholder="Windows Licence Yes/No"/>
 
-                    <h3>MAC:</h3>
-                    <input type="text" name="macAddress" placeholder="MAC address"/>
+                    <label for="mac">MAC:</label>
+                    <input class="textInput" type="text" name="macAddress" placeholder="MAC address"/>
 
                 </div>
                 <div class="mini-container-3">
-                    <h3>AzureAdPrt:</h3>
-                    <input type="text" name="azureAdPrt" placeholder="AzureAdPrt"/>
+                    <label for="azureadprt">AzureAdPrt:</label>
+                    <input class="textInput" type="text" name="azureAdPrt" placeholder="Yes/No"/>
                
-                    <h3>IsDeviceJoined:</h3>
-                    <input type="text" name="isDeviceJoined" placeholder="IsDeviceJoined"/>
+                    <label for="isdevicejoined">IsDeviceJoined:</label>
+                    <input class="textInput" type="text" name="isDeviceJoined" placeholder="Yes/No"/>
                 
-                    <h3>IsUserAzureAD:</h3>
-                    <input type="text" name="isUserAzureAD" placeholder="IsUserAzureAD"/>
+                    <label for="isuserazuread">IsUserAzureAD:</label>
+                    <input class="textInput" type="text" name="isUserAzureAD" placeholder="Yes/No"/>
 
-                    <h3>AzureAdJoined:</h3>
-                    <input type="text" name="azureAdJoined" placeholder="AzureAdJoined"/>
+                    <label for="azureadjoined">AzureAdJoined:</label>
+                    <input class="textInput" type="text" name="azureAdJoined" placeholder="Yes/No"/>
                     <input type="submit" value="Submit" class="btn"/>
                 </div>
             </div>               

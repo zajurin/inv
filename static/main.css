@@ -16,66 +16,102 @@ body {
   background-size: cover;
 }
 
+.main-container {
+  background-color: rgb(248, 246, 246, 0.32);
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  flex-basis: 90%;
+  height: 60vh;
+  margin: auto;
+  justify-content: space-between;
+  align-content: center;
+  border-radius: 0.8rem;
+}
+
+form {
+  align-content: center;
+  width: 100vw;
+}
+
 .myheader {
   background-color: rgb(91, 71, 146);
 }
 
-.topnav {
-  background-color: pink;
-  width: 90%;
-  height: 20%;
-  margin: auto;
+nav {
+  margin-top: 2%;
 }
 
-img.logo {
-  float: left;
-  padding: 1%;
-  margin-bottom: 0%;
-  width: 10vw;
-  height: 10vh;
-  display: inline;
-  text-indent: -999 px;
-}
-
-.main-container {
+.topnav a {
   background-color: rgb(248, 246, 246, 0.32);
-  display: flex;
-  justify-content: space-between;
+  color: white;
+  height: 10%;
+  font-size: larger;
+  border-radius: 1.3rem;
+  text-decoration: none;
   padding: 1%;
-  width: 90%;
-  height: 60%;
-  margin: auto;
 }
+
+.topnav a:hover {
+  background-color: white;
+  color: rgb(87, 76, 78);
+}
+
+#separator {
+  /* margin: 2%; */
+  padding: 2%;
+  text-align: center;
+}
+
+[class*='mini-container'] {
+  margin: 3%;
+}
+
 .mini-container {
   box-sizing: border-box;
-  border-radius: 5%;
-  border: none;
-  width: 30%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
 }
 
 .mini-container-2 {
   box-sizing: border-box;
-  /* border-radius: 5%; */
-  border: none;
+  display: flex;
+  float: left;
+  flex-direction: column;
   flex-basis: 30%;
 }
 
 .mini-container-3 {
   box-sizing: border-box;
-  border-radius: 5%;
-  border: none;
-  width: 30%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
 }
 
-h3 {
-  color: rgb(87, 76, 78);
+label {
+  /* color: rgb(87, 76, 78); */
+  color: white;
+  margin-bottom: 2%;
+}
+input.textInput {
+  width: 20vw;
+  max-width: 25vw;
+  max-height: 24px;
+  min-width: 150px;
+  border-radius: 0.5rem;
+  border-style: none;
 }
 
 .btn {
   background-color: #04aa6d;
-  height: 6vh;
+  height: 7vh;
+  border-radius: 1rem;
   margin: 8% auto;
   color: white;
   display: block;
   width: 20vw;
+  font-weight: bold;
 }
