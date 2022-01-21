@@ -1,0 +1,89 @@
+* {
+  padding: 0 px;
+  margin: 0 px;
+  font-family: cursive;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./fontpicture.jpg');
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-container {
+  background-color: rgb(248, 246, 246, 0.32);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5% auto;
+  flex-direction: row;
+  padding: 5%;
+  flex-basis: 90%;
+  height: 82vh;
+  margin-left: auto;
+  justify-content: space-around;
+  /* align-content: center; */
+  border-radius: 0.8rem;
+}
+
+.myList {
+  width: 30%;
+  height: 20%;
+  margin: 1%;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 5%;
+}
+
+.myheader {
+  background-color: rgb(91, 71, 146);
+}
+
+nav {
+  margin-top: 2%;
+}
+
+.topnav a {
+  background-color: rgb(248, 246, 246, 0.32);
+  color: white;
+  height: 10%;
+  font-size: larger;
+  border-radius: 1.3rem;
+  text-decoration: none;
+  padding: 1%;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: rgb(87, 76, 78);
+}
+
+.myList {
+  list-style: none;
+}
+
+/* input.textInput {
+  width: 20vw;
+  max-width: 25vw;
+  max-height: 24px;
+  min-width: 150px;
+  border-radius: 0.5rem;
+  border-style: none;
+} */
+
+.btn {
+  background-color: #04aa6d;
+  height: 7vh;
+  border-radius: 1rem;
+  margin: 8% auto;
+  color: white;
+  display: block;
+  width: 20vw;
+  font-weight: bold;
+}
