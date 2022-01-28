@@ -62,6 +62,12 @@ def home_page():
     return render_template("index.html")
 
 
+@app.route("/base")
+def base_page():
+    # online_users = mongo.db.users.find({"online": True})
+    return render_template("base.html")
+
+
 @app.route("/submit", methods=['POST'])
 def submit():
     if request.method == 'POST':
