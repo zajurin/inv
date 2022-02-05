@@ -1,8 +1,9 @@
 from datetime import MAXYEAR
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, request_started
 from flask_sqlalchemy import SQLAlchemy
 import os
-
+from getData.getUser import dataDictionary
+from getData.automatically import azureDictionary
 app = Flask(__name__)
 
 # ------ DOCUMENTATION CODE -------
@@ -58,14 +59,22 @@ class MyModel(db.Model):
 
 @app.route("/")
 def home_page():
-    # online_users = mongo.db.users.find({"online": True})
     return render_template("index.html")
 
 
-@app.route("/base")
-def base_page():
-    # online_users = mongo.db.users.find({"online": True})
-    return render_template("base.html")
+@app.route("/automate")
+def automatically_page():
+    return render_template("automate.html", data=dataDictionary, azureData=azureDictionary)
+
+
+@app.route("/login")
+def login_page():
+    return render_template("login.html")
+
+
+@app.route("/exit")
+def exit_page():
+    return render_template("exit.html")
 
 
 @app.route("/submit", methods=['POST'])

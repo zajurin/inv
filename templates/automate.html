@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/automatically.css">
+</head>
+<body>
+    <nav class="topnav">
+        <a href="/">Home</a>
+        <a href="http://127.0.0.1:5000/automate">Automate</a>
+        <a href="http://127.0.0.1:5000/login">Login</a>
+        <a href="http://127.0.0.1:5000/exit">Exit</a>
+    </nav>
+    <div class="main-container">
+        <li class="myList" style="background-color: rgb(115, 255, 0);">User: {{ data.username }}</li>
+        <li class="myList" style="background-color: rgb(144, 144, 165);">Brand: {{ data.brand }}</li>
+        <li class="myList" style="background-color: rgb(0, 255, 115);">Model: {{ data.model }}</li>
+        <li class="myList" style="background-color: rgb(162, 0, 255);">Serial Number: {{ data.serialNumber }}</li>
+        <li class="myList" style="background-color: rgb(91, 91, 228);">RAM: {{ data.ram }}</li>
+        <li class="myList" style="background-color: rgb(255, 0, 140);">Operating System: {{ data.operatingSystem }}</li>
+        <li class="myList" style="background-color: rgb(138, 93, 129);">Windows Licence: FALTA</li>
+        <li class="myList" style="background-color: rgb(255, 53, 7);">MAC: {{ data.macAddress }}</li>
+        <li class="myList" style="background-color: #644f09;">AzureAdPrt: {{ azureData.AzureAdPrt }}</li>
+        <li class="myList" style="background-color: rgb(0, 255, 255);">IsDeviceJoined: {{ azureData.IsDeviceJoined }}</li>
+        <li class="myList" style="background-color: rgb(177, 192, 125);">IsUserAzureAD: {{ azureData.IsUserAzureAD }}</li>
+        <li class="myList" style="background-color: rgb(217, 240, 65);">AzureAdJoined: {{ azureData.AzureAdJoined }}</li>
+    </div>
+</body>
+</html>
