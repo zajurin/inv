@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+<!-- {% block title %}Index{% endblock %} -->
+{% block belleza %}{% endblock %}
+{% block container %}
+<form action="/submit" method="POST">
+    <div class="form-group">
+        <div class="mini-container">
+            <label for="user">User</label>
+            <input class="textInput" type="text" name="user" placeholder="User Name" value={{data.username}} />
+
+            <label for="brand">Brand</label>
+            <input class="textInput" type="text" name="brand" placeholder="Brand" value={{data.brand}} />
+
+            <label for="model">Model</label>
+            <input class="textInput" type="text" name="model" placeholder="Model" value={{data.model}}/>
+
+            <label for="sn">S/N</label>
+            <input class="textInput" type="text" name="serialNumber" placeholder="Serial Number" value={{data.serialNumber}} />
+        </div>
+        <div class="mini-container-2">
+            <label for="ram">RAM</label>
+            <input class="textInput" type="text" name="ram" placeholder="RAM size" value={{data.ram}} />
+
+            <label for="os">OS</label>
+            <input class="textInput" type="text" name="operatingSystem" placeholder="Operating System" value={{data.operatingSystem}} />
+
+            <label for="licence">Licence</label>
+            <input class="textInput" type="text" name="licence" placeholder="Windows Licence Yes/No" value="MISSING DATA" />
+
+            <label for="mac">MAC:</label>
+            <input class="textInput" type="text" name="macAddress" placeholder="MAC address" value={{data.macAddress}} />
+
+        </div>
+        <div class="mini-container-3">
+            <label for="azureadprt">AzureAdPrt:</label>
+            <input class="textInput" type="text" name="azureAdPrt" placeholder="Yes/No" value={{azureData.AzureAdPrt}} />
+        
+            <label for="isdevicejoined">IsDeviceJoined:</label>
+            <input class="textInput" type="text" name="isDeviceJoined" placeholder="Yes/No" value={{azureData.IsDeviceJoined}} />
+        
+            <label for="isuserazuread">IsUserAzureAD:</label>
+            <input class="textInput" type="text" name="isUserAzureAD" placeholder="Yes/No" value={{azureData.IsUserAzureAD}} />
+
+            <label for="azureadjoined">AzureAdJoined:</label>
+            <input class="textInput" type="text" name="azureAdJoined" placeholder="Yes/No" value={{azureData.AzureAdJoined}} />
+            <input type="submit" value="Submit" class="btn" />
+        </div>
+    </div>               
+</form>
+{% endblock %}

@@ -1,10 +1,16 @@
-from datetime import MAXYEAR
+from getData.getUser import dataDictionary
+from getData.automatically import azureDictionary
+from turtle import title
 from flask import Flask, render_template, request, request_started
 from flask_sqlalchemy import SQLAlchemy
 import os
 from getData.getUser import dataDictionary
 from getData.automatically import azureDictionary
+
 app = Flask(__name__)
+
+# -------- FORM ---------
+app.secret_key = 'replace later'
 
 # ------ DOCUMENTATION CODE -------
 ENVIROMENT = "dev"
@@ -59,22 +65,73 @@ class MyModel(db.Model):
 
 @app.route("/")
 def home_page():
-    return render_template("index.html")
+    return render_template("index.html", title="Home", data=dataDictionary,
+                           azureData=azureDictionary)
 
 
-@app.route("/automate")
+@app.route('/form')
+def myForm():
+    return render_template('myForm.html', title="Form", data=dataDictionary,
+                           azureData=azureDictionary)
+
+
+# ________________________________________________
+
+
+@app.route('/toying')
+def myBase():
+    return render_template('toyBase.html', title="Toying section")
+
+
+@app.route('/form2')
+def myData():
+    return render_template('toyForm.html', title="Toying Form")
+
+# __________________________________________________________
+
+
+@app.route("/automate", methods=['POST', 'GET'])
 def automatically_page():
-    return render_template("automate.html", data=dataDictionary, azureData=azureDictionary)
+
+    if request.method == 'GET':
+        render_template("automate.html", title="Automate", data=dataDictionary,
+                        azureData=azureDictionary)
+
+    elif request.method == 'POST':
+        if request.form['send'] == "sending_data":
+            user = dataDictionary.username
+            brand = dataDictionary.brand
+            model = dataDictionary.model
+            serialNumber = dataDictionary.serialNumber
+            ram = dataDictionary.ram
+            operatingSystem = dataDictionary.operatingSystem
+            licence = dataDictionary.licence
+
+            azureAdJoined = azureDictionary.AzureAdJoined
+            azureAdPrt = azureDictionary.AzureAdPrt
+            isDeviceJoined = azureDictionary.IsDeviceJoined
+            isUserAzureAD = azureDictionary.IsUserAzureAD
+            macAddress = azureDictionary.macAddress
+
+            if db.session.query(MyModel).filter(MyModel.user == user).count() == 0:
+                data = MyModel(user, brand, model, serialNumber, ram, operatingSystem, licence,
+                               azureAdJoined, azureAdPrt, isDeviceJoined, isUserAzureAD, macAddress)
+                db.session.add(data)
+                db.session.commit()
+                return render_template("automate.html", title="Automate", data=dataDictionary,
+                                       azureData=azureDictionary)
+    return render_template("automate.html", title="Automate", data=dataDictionary,
+                           azureData=azureDictionary)
 
 
-@app.route("/login")
-def login_page():
-    return render_template("login.html")
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    return render_template('register.html')
 
 
 @app.route("/exit")
 def exit_page():
-    return render_template("exit.html")
+    return render_template("exit.html", title="Exit")
 
 
 @app.route("/submit", methods=['POST'])
@@ -85,7 +142,7 @@ def submit():
         model = request.form['model']
         serialNumber = request.form['serialNumber']
         ram = request.form['ram']
-        operatingSystem = request.form['serialNumber']
+        operatingSystem = request.form['operatingSystem']
         licence = request.form['licence']
         azureAdJoined = request.form['azureAdJoined']
         azureAdPrt = request.form['azureAdPrt']

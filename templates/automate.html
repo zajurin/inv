@@ -1,32 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../static/automatically.css">
-</head>
-<body>
-    <nav class="topnav">
-        <a href="/">Home</a>
-        <a href="http://127.0.0.1:5000/automate">Automate</a>
-        <a href="http://127.0.0.1:5000/login">Login</a>
-        <a href="http://127.0.0.1:5000/exit">Exit</a>
-    </nav>
-    <div class="main-container">
-        <li class="myList" style="background-color: rgb(115, 255, 0);">User: {{ data.username }}</li>
-        <li class="myList" style="background-color: rgb(144, 144, 165);">Brand: {{ data.brand }}</li>
-        <li class="myList" style="background-color: rgb(0, 255, 115);">Model: {{ data.model }}</li>
-        <li class="myList" style="background-color: rgb(162, 0, 255);">Serial Number: {{ data.serialNumber }}</li>
-        <li class="myList" style="background-color: rgb(91, 91, 228);">RAM: {{ data.ram }}</li>
-        <li class="myList" style="background-color: rgb(255, 0, 140);">Operating System: {{ data.operatingSystem }}</li>
-        <li class="myList" style="background-color: rgb(138, 93, 129);">Windows Licence: FALTA</li>
-        <li class="myList" style="background-color: rgb(255, 53, 7);">MAC: {{ data.macAddress }}</li>
-        <li class="myList" style="background-color: #644f09;">AzureAdPrt: {{ azureData.AzureAdPrt }}</li>
-        <li class="myList" style="background-color: rgb(0, 255, 255);">IsDeviceJoined: {{ azureData.IsDeviceJoined }}</li>
-        <li class="myList" style="background-color: rgb(177, 192, 125);">IsUserAzureAD: {{ azureData.IsUserAzureAD }}</li>
-        <li class="myList" style="background-color: rgb(217, 240, 65);">AzureAdJoined: {{ azureData.AzureAdJoined }}</li>
-    </div>
-</body>
-</html>
+{% extends "index.html" %}
+{% block automate %}
+{{ super() }}
+  <style type="text/css">
+    .container { 
+        background-color: rgb(248, 246, 246, 0.32);
+        display: flex;
+        flex-direction: row;
+        padding: 1%;
+        flex-basis: 90%;
+        height: 90vh;
+        margin: auto;
+        justify-content: space-between;
+        align-content: center;
+        border-radius: 0.8rem;
+    }
+    
+    [class*='mini-container'] {
+    margin: 3%;
+    }
+
+    .myList {
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    }
+    .btn {
+    background-color: #04aa6d;
+    height: 7vh;
+    border-radius: 1rem;
+    margin: 8% auto;
+    color: white;
+    display: block;
+    width: 20vw;
+    font-weight: bold;
+    }
+  </style>
+<div class="main-container">
+    <li class="myList" style="background-color: rgb(115, 255, 0);" name="username" value={data.username}>User: {{ data.username }}</li>
+    <li class="myList" style="background-color: rgb(144, 144, 165);" name="brand" value= {data.brand}>Brand: {{ data.brand }}</li>
+    <li class="myList" style="background-color: rgb(0, 255, 115);" name="model" value={data.model}>Model: {{ data.model }}</li>
+    <li class="myList" style="background-color: rgb(162, 0, 255);" name="serialNumber" value={data.serialNumber}>Serial Number: {{ data.serialNumber }}</li>
+    <li class="myList" style="background-color: rgb(91, 91, 228);" name="ram" value={data.ram}>RAM: {{ data.ram }}</li>
+    <li class="myList" style="background-color: rgb(255, 0, 140);" name="data.operatingSystem" value={data.operatingSystem}>Operating System: {{ data.operatingSystem }}</li>
+    <li class="myList" style="background-color: rgb(138, 93, 129);" name="licence" value='licence'>Windows Licence: FALTA</li>
+    <li class="myList" style="background-color: rgb(255, 53, 7);" name="macAddress" value={data.macAddress}>MAC: {{ data.macAddress }}</li>
+    <li class="myList" style="background-color: #644f09;" name="AzureAdPrt" value={azureData.AzureAdPrt}>AzureAdPrt: {{ azureData.AzureAdPrt }}</li>
+    <li class="myList" style="background-color: rgb(0, 255, 255);" name="IsDeviceJoined" value={azureData.IsDeviceJoined}>IsDeviceJoined: {{ azureData.IsDeviceJoined }}</li>
+    <li class="myList" style="background-color: rgb(177, 192, 125);" name="IsUserAzureAD" value={azureData.IsUserAzureAD}>IsUserAzureAD: {{ azureData.IsUserAzureAD }}</li>
+    <li class="myList" style="background-color: rgb(217, 240, 65);" name="AzureAdJoined" value={azureData.AzureAdJoined}>AzureAdJoined: {{ azureData.AzureAdJoined }}</li>
+    <input type="submit" name="send" value="sending_data">
+</div>
+{% endblock %}

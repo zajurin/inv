@@ -1,0 +1,16 @@
+{% extends "toyBase.html" %}
+{% block head %}{% endblock head %}
+{% block toyForm %}
+<form action="submit">
+    <label for="email">Email</label>
+    <input id="myemail" type="email">
+    
+    <label for="mypassword"></label>
+    <input id="mypassword" placeholder="Password" type="password">
+    
+    <label for="mypassword2">Confirm Pasword</label>    
+    <input id="mypassword2" placeholder="Confirm Pasword" type="password">
+
+    <button type="submit">Send</button>
+</form>
+{% endblock toyForm %}

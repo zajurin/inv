@@ -67,7 +67,8 @@ def Runner():
 
                 else:
                     # *** OOP ***
-                    string_To_DB = f"NOT present in {concatenate_os_version}"
+                    string_To_DB = "NOT present in {0}".format(
+                        concatenate_os_version)
                     instanceOfRemoveSpace_Colon = RemoveSpace_Colon(
                         eachSearched, azureDictionary, string_To_DB)
 
